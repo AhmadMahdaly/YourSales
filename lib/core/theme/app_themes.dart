@@ -1,0 +1,76 @@
+import 'package:flutter/material.dart';
+import 'package:your_sales/core/constants.dart';
+import 'package:your_sales/core/responsive/responsive_config.dart';
+import 'package:your_sales/core/theme/app_colors.dart';
+import 'package:your_sales/core/theme/app_text_style.dart';
+
+class Appthemes {
+  static ThemeData lightTheme() {
+    return ThemeData(
+      colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
+      useMaterial3: true,
+      primaryColor: AppColors.primaryColor,
+      scaffoldBackgroundColor: AppColors.scaffoldBackgroundLightColor,
+      fontFamily: kPrimaryFont,
+
+      textTheme: TextTheme(
+        titleLarge: AppTextStyles.style18W800,
+        titleMedium: AppTextStyles.style16W500,
+      ),
+      appBarTheme: AppBarTheme(
+        iconTheme: const IconThemeData(color: AppColors.forthColor),
+        toolbarHeight: 80.h,
+        backgroundColor: AppColors.appBarColor,
+        surfaceTintColor: AppColors.scaffoldBackgroundLightColor,
+      ),
+      cardTheme: CardThemeData(
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.r),
+        ),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15.r)),
+      ),
+      visualDensity: VisualDensity.adaptivePlatformDensity,
+
+      /// Dialog theme
+      dialogTheme: DialogThemeData(
+        backgroundColor: AppColors.scaffoldBackgroundLightColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        elevation: 5,
+        titleTextStyle: AppTextStyles.style20Bold,
+      ),
+
+      /// ستايل الزر الرئيسي (ElevatedButton)
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.primaryColor,
+          foregroundColor:
+              AppColors.scaffoldBackgroundLightColor, // لون النص والأيقونة
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.r),
+          ),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+          textStyle: AppTextStyles.style12W500,
+        ),
+      ),
+
+      /// ستايل الزر الثانوي (TextButton)
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          foregroundColor: AppColors.secondaryColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.r),
+          ),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+          textStyle: AppTextStyles.style14W500.copyWith(
+            fontFamily: kPrimaryFont,
+          ),
+        ),
+      ),
+    );
+  }
+}
