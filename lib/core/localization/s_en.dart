@@ -9,7 +9,7 @@ class SEn extends S {
   SEn([String locale = 'en']) : super(locale);
 
   @override
-  String get lang => 'العربية';
+  String get lang => 'ع';
 
   @override
   String get next => 'Next';
@@ -18,15 +18,25 @@ class SEn extends S {
   String get skip => 'Skip';
 
   @override
+  String get onboard1Title => 'Enable Your Location';
+
+  @override
+  String get onboard2Title => 'Receive Your Stock at the Warehouse';
+
+  @override
+  String get onboard3Title => 'Deliver Smart, Track Every Step';
+
+  @override
   String get onboard1 =>
-      'Juggling multiple systems that don’t talk to each other drains time & rescoures';
+      'Allow the app to access your location to start your workday.\nAccurate tracking helps you receive tasks and monitor your route in real time.';
 
   @override
   String get onboard2 =>
-      'We create creative,functional & secure systems that unify your operations & data';
+      'Once you arrive at the warehouse, request supervisor approval to view your assigned products and quantities.\nStart distribution with full clarity and organization.';
 
   @override
-  String get onboard3 => 'Explore our services or chat with an expert today';
+  String get onboard3 =>
+      'Follow your delivery route, visit merchants, create invoices, and add new clients easily.\nWhen you return to the warehouse, record remaining stock or returns seamlessly.';
 
   @override
   String get exploreOurWork => 'Explore Our Work';

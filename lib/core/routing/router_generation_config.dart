@@ -4,6 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:your_sales/core/constants.dart';
 import 'package:your_sales/core/routing/app_routes.dart';
+import 'package:your_sales/features/auth/presentation/views/forget_password_view.dart';
+import 'package:your_sales/features/auth/presentation/views/login_view.dart';
+import 'package:your_sales/features/auth/presentation/views/new_password_view.dart';
+import 'package:your_sales/features/auth/presentation/views/otp_verification_view.dart';
+import 'package:your_sales/features/auth/presentation/views/register_view.dart';
 import 'package:your_sales/features/intro/onboarding/cubit/onboarding_cubit.dart';
 import 'package:your_sales/features/intro/onboarding/onboarding_screen.dart';
 import 'package:your_sales/features/intro/splash/splash_view.dart';
@@ -28,7 +33,37 @@ class RouterGenerationConfig {
           child: const OnBoardingScreen(),
         ),
       ),
-
+      GoRoute(
+        path: AppRoutes.loginScreen,
+        name: AppRoutes.loginScreen,
+        builder: (context, state) => const LoginView(),
+      ),
+      GoRoute(
+        path: AppRoutes.registerScreen,
+        name: AppRoutes.registerScreen,
+        builder: (context, state) => const RegisterView(),
+      ),
+      GoRoute(
+        path: AppRoutes.forgetPasswordScreen,
+        name: AppRoutes.forgetPasswordScreen,
+        builder: (context, state) => const ForgotPasswordView(),
+      ),
+      GoRoute(
+        path: AppRoutes.otpVerificationView,
+        name: AppRoutes.otpVerificationView,
+        builder: (context, state) {
+          final email = state.extra! as String;
+          return OtpVerificationView(email: email);
+        },
+      ),
+      GoRoute(
+        path: AppRoutes.newPasswordView,
+        name: AppRoutes.newPasswordView,
+        builder: (context, state) {
+          final email = state.extra! as String;
+          return NewPasswordView(email: email);
+        },
+      ),
       GoRoute(
         path: AppRoutes.mainlayoutScreen,
         name: AppRoutes.mainlayoutScreen,

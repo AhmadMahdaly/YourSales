@@ -32,7 +32,7 @@ class _SplashViewState extends State<SplashView> {
     if (hasSeenOnboarding == null) {
       context.go(AppRoutes.onBoardingScreen);
     } else {
-      context.go(AppRoutes.mainlayoutScreen);
+      context.go(AppRoutes.loginScreen);
     }
   }
 
@@ -46,7 +46,6 @@ class _SplashViewState extends State<SplashView> {
             child: Image.asset(
               AppImages.appLogo,
               fit: BoxFit.cover,
-              height: 190.h,
               width: 190.w,
             ),
           ),

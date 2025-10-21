@@ -100,7 +100,7 @@ abstract class S {
   /// No description provided for @lang.
   ///
   /// In en, this message translates to:
-  /// **'العربية'**
+  /// **'ع'**
   String get lang;
 
   /// No description provided for @next.
@@ -115,22 +115,40 @@ abstract class S {
   /// **'Skip'**
   String get skip;
 
+  /// No description provided for @onboard1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable Your Location'**
+  String get onboard1Title;
+
+  /// No description provided for @onboard2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Receive Your Stock at the Warehouse'**
+  String get onboard2Title;
+
+  /// No description provided for @onboard3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Deliver Smart, Track Every Step'**
+  String get onboard3Title;
+
   /// No description provided for @onboard1.
   ///
   /// In en, this message translates to:
-  /// **'Juggling multiple systems that don’t talk to each other drains time & rescoures'**
+  /// **'Allow the app to access your location to start your workday.\nAccurate tracking helps you receive tasks and monitor your route in real time.'**
   String get onboard1;
 
   /// No description provided for @onboard2.
   ///
   /// In en, this message translates to:
-  /// **'We create creative,functional & secure systems that unify your operations & data'**
+  /// **'Once you arrive at the warehouse, request supervisor approval to view your assigned products and quantities.\nStart distribution with full clarity and organization.'**
   String get onboard2;
 
   /// No description provided for @onboard3.
   ///
   /// In en, this message translates to:
-  /// **'Explore our services or chat with an expert today'**
+  /// **'Follow your delivery route, visit merchants, create invoices, and add new clients easily.\nWhen you return to the warehouse, record remaining stock or returns seamlessly.'**
   String get onboard3;
 
   /// No description provided for @exploreOurWork.

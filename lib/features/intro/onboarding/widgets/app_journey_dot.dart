@@ -20,13 +20,15 @@ class CustomJourneyDot extends StatelessWidget {
         shrinkWrap: true,
         itemBuilder: (context, index) {
           return Padding(
-            padding: EdgeInsets.symmetric(horizontal: 7.w),
+            padding: EdgeInsets.symmetric(horizontal: 4.w),
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 500),
-              height: 10.h,
-              width: activeIndex == index ? 22.w : 12.w,
+              height: 6.h,
+              width: activeIndex == index ? 22.w : 5.w,
               decoration: BoxDecoration(
-                color: AppColors.secondaryColor,
+                color: activeIndex == index
+                    ? AppColors.primaryColor
+                    : AppColors.grayColor,
                 borderRadius: BorderRadius.circular(15.w),
               ),
             ),

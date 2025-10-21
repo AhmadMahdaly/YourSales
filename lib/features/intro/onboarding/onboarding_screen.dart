@@ -64,28 +64,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     ),
                   ),
                 ),
-                // Positioned(
-                //   top: 0.h,
-                //   left: 0,
-                //   right: 0,
-                //   child: Image.asset(
-                //     alignment: Alignment.topLeft,
-                //     AppImages.onboardLeftBG,
-                //   ),
-                // ),
-                // Positioned(
-                //   top: 0.h,
-                //   left: 0,
-                //   right: 0,
-                //   child: Image.asset(
-                //     alignment: Alignment.topRight,
-                //     AppImages.onboardRightBG,
-                //   ),
-                // ),
+
                 PageView.builder(
                   controller: _pageController,
                   itemCount: 3,
-                  physics: const BouncingScrollPhysics(),
+                  // physics: const BouncingScrollPhysics(),
                   onPageChanged: onboardingCubit.setOnBoardingIndex,
                   itemBuilder: (context, index) {
                     final images = [
@@ -94,35 +77,37 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       AppImages.onboard3,
                     ];
 
-                    return Stack(
+                    return Column(
                       children: [
-                        // Image
-                        Positioned(
-                          bottom: SizeConfig.screenHeight / 2,
-                          right: 16.w,
-                          left: 16.w,
-                          child: Image.asset(
-                            images[index],
-                            fit: BoxFit.fitWidth,
-                            width: double.infinity,
+                        Padding(
+                          padding: EdgeInsets.all(25.r),
+                          child: CircleAvatar(
+                            backgroundColor:
+                                AppColors.scaffoldBackgroundLightColor,
+                            radius: SizeConfig.screenWidth - 200.r,
+                            child: Image.asset(
+                              images[index],
+                              fit: BoxFit.fill,
+                              width: SizeConfig.screenWidth - 100.w,
+                            ),
                           ),
                         ),
-                        Positioned(
-                          bottom: 0,
-                          right: 0,
-                          left: 0,
-                          child: Container(
-                            height: SizeConfig.screenHeight / 2.3,
-                            decoration: BoxDecoration(
-                              color: AppColors.scaffoldBackgroundLightColor,
-                              borderRadius: BorderRadius.only(
-                                topLeft: CacheHelper.getLanguage() == 'en'
-                                    ? Radius.circular(100.r)
-                                    : Radius.zero,
-                                topRight: CacheHelper.getLanguage() == 'ar'
-                                    ? Radius.circular(100.r)
-                                    : Radius.zero,
-                              ),
+                        const Spacer(),
+                        Container(
+                          height: SizeConfig.screenHeight / 2.3,
+                          decoration: const BoxDecoration(
+                            color: AppColors.scaffoldBackgroundLightColor,
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.r),
+                            child: Column(
+                              children: [
+                                60.verticalSpace,
+                                const OnBoardingTitle(),
+                                8.verticalSpace,
+                                const OnBoardingText(),
+                                50.verticalSpace,
+                              ],
                             ),
                           ),
                         ),
@@ -139,22 +124,36 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      TextButton(
-                        onPressed: () async {
-                          final newLang = CacheHelper.getLanguage() == 'ar'
-                              ? 'en'
-                              : 'ar';
-                          await localizationCubit.changeLanguage(
-                            Locale(newLang),
-                          );
-                        },
-                        child: Text(
-                          s.lang,
-                          style: AppTextStyles.style16W500.copyWith(
-                            color: AppColors.scaffoldBackgroundLightColor,
-                            fontSize: SizeConfig.responsiveValue(
-                              phone: 12.sp,
-                              tablet: 16.sp,
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 8.w,
+                          vertical: 4.h,
+                        ),
+                        margin: EdgeInsets.symmetric(horizontal: 16.w),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4.r),
+                          border: Border.all(
+                            color: AppColors.lightBlueColor,
+                            strokeAlign: BorderSide.strokeAlignOutside,
+                          ),
+                        ),
+                        child: InkWell(
+                          onTap: () async {
+                            final newLang = CacheHelper.getLanguage() == 'ar'
+                                ? 'en'
+                                : 'ar';
+                            await localizationCubit.changeLanguage(
+                              Locale(newLang),
+                            );
+                          },
+                          child: Text(
+                            s.lang,
+                            style: AppTextStyles.style16W600.copyWith(
+                              color: AppColors.scaffoldBackgroundLightColor,
+                              fontSize: SizeConfig.responsiveValue(
+                                phone: 14.sp,
+                                tablet: 16.sp,
+                              ),
                             ),
                           ),
                         ),
@@ -166,49 +165,47 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ),
                 // Bottom content
                 Positioned(
-                  bottom: 0,
+                  bottom: SizeConfig.screenHeight / 2.5,
                   right: 0,
                   left: 0,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15.w),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        20.verticalSpace,
-                        const OnBoardingText(),
-                        50.verticalSpace,
-                        SizedBox(
-                          height: 15.h,
-                          child: CustomJourneyDot(
-                            activeIndex: onboardingCubit.onBoardingIndex,
-                            count: 3,
-                          ),
-                        ),
-                        30.verticalSpace,
-                        CustomPrimaryButton(
-                          text: onboardingCubit.onBoardingIndex == 2
-                              ? s.exploreOurWork
-                              : s.next,
-                          onPressed: () {
-                            if (onboardingCubit.onBoardingIndex == 2) {
-                              CacheHelper.set(
-                                CacheKeys.isFirstOpen,
-                                true,
-                              );
-                              context.pushReplacementNamed(
-                                AppRoutes.mainlayoutScreen,
-                              );
-                            } else {
-                              _pageController.nextPage(
-                                duration: const Duration(milliseconds: 500),
-                                curve: Curves.easeInOut,
-                              );
-                            }
-                          },
-                        ),
-                        32.verticalSpace,
-                      ],
+                  child: SizedBox(
+                    height: 5.h,
+                    child: CustomJourneyDot(
+                      activeIndex: onboardingCubit.onBoardingIndex,
+                      count: 3,
                     ),
+                  ),
+                ),
+
+                Positioned(
+                  bottom: 30.h,
+                  right: 0,
+                  left: 0,
+                  child: Column(
+                    children: [
+                      CustomPrimaryButton(
+                        width: 100.w,
+                        text: onboardingCubit.onBoardingIndex == 2
+                            ? s.exploreOurWork
+                            : s.next,
+                        onPressed: () {
+                          if (onboardingCubit.onBoardingIndex == 2) {
+                            CacheHelper.set(
+                              CacheKeys.isFirstOpen,
+                              true,
+                            );
+                            context.pushReplacementNamed(
+                              AppRoutes.loginScreen,
+                            );
+                          } else {
+                            _pageController.nextPage(
+                              duration: const Duration(milliseconds: 500),
+                              curve: Curves.easeInOut,
+                            );
+                          }
+                        },
+                      ),
+                    ],
                   ),
                 ),
               ],

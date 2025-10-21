@@ -9,7 +9,7 @@ class SAr extends S {
   SAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get lang => 'English';
+  String get lang => 'EN';
 
   @override
   String get next => 'التالي';
@@ -18,15 +18,25 @@ class SAr extends S {
   String get skip => 'تخطي';
 
   @override
+  String get onboard1Title => 'فعّل موقعك لتبدأ يومك';
+
+  @override
+  String get onboard2Title => 'استلم بضاعتك من المخزن';
+
+  @override
+  String get onboard3Title => 'وزّع بذكاء وتتبّع تقدمك';
+
+  @override
   String get onboard1 =>
-      'تعاني من أنظمة متعددة لا تتواصل مع بعضها، هذا الهدر للوقت والموارد سينتهي';
+      'يساعدك التطبيق على تحديد موقعك بدقة لتسهيل استلام المهام وتحديث حالة التوزيع لحظيًا.\nاسمح للتطبيق بالوصول إلى موقعك لتبدأ رحلتك من المخزن بثقة.';
 
   @override
   String get onboard2 =>
-      'نحن نبتكر أنظمة إبداعية وعملية وآمنة توحّد عملياتك و بياناتك في مكان واحد';
+      'بعد الوصول إلى المخزن، يمكنك طلب الإذن من المشرف واستعراض المنتجات المخصصة لك مع الكميات./nابدأ التوزيع فور موافقة المشرف لتبدأ يومك بوضوح وتنظيم.';
 
   @override
-  String get onboard3 => 'اكتشف الخدمات أو احصل على استشارة فورية';
+  String get onboard3 =>
+      'تابع مسارك إلى التجار، أنشئ فواتيرك مباشرة من التطبيق، وأضف تجارًا جددًا بسهولة.\nعند العودة للمخزن، سلّم المتبقي وسجّل المرتجع بكل سلاسة.';
 
   @override
   String get exploreOurWork => 'اكتشف أعمالنا';
