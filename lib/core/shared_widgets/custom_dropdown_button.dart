@@ -33,21 +33,21 @@ class CustomDropdownButtonFormField<T> extends StatelessWidget {
       isExpanded: true,
       icon: const Icon(
         Icons.keyboard_arrow_down,
-        color: AppColors.secondaryColor,
+        color: AppColors.textGrayColor,
       ),
       style: AppTextStyles.style14W500.copyWith(
-        color: AppColors.thirdColor,
+        color: AppColors.textGrayColor,
       ),
       dropdownColor: AppColors.scaffoldBackgroundLightColor,
 
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: AppTextStyles.style14W500.copyWith(
-          color: AppColors.secondaryColor,
+          color: AppColors.textGrayColor,
         ),
 
         border: customOutlineInputBorder(),
-        focusedBorder: customOutlineInputBorder(),
+        focusedBorder: customFocusedOutlineInputBorder(),
         enabledBorder: customOutlineInputBorder(),
         disabledBorder: customOutlineInputBorder(),
 
@@ -56,8 +56,8 @@ class CustomDropdownButtonFormField<T> extends StatelessWidget {
           horizontal: 12.w,
           vertical: 10.h,
         ),
-        filled: true,
-        fillColor: AppColors.scaffoldBackgroundLightColor,
+        // filled: true,
+        // fillColor: AppColors.scaffoldBackgroundLightColor,
       ),
     );
   }

@@ -5,4 +5,4 @@ int mainLayoutIntitalScreenIndex = 0;
 String? userToken;
 final navigatorKey = GlobalKey<NavigatorState>();
 const kPrimaryFont = 'IBMPlexSansArabic';
-final double kRadus = 15.r;
+final double kRadus = 8.r;

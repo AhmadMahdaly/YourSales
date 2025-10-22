@@ -151,6 +151,60 @@ abstract class S {
   /// **'Follow your delivery route, visit merchants, create invoices, and add new clients easily.\nWhen you return to the warehouse, record remaining stock or returns seamlessly.'**
   String get onboard3;
 
+  /// No description provided for @loginToYourAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Login to your account'**
+  String get loginToYourAccount;
+
+  /// No description provided for @signUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up'**
+  String get signUp;
+
+  /// No description provided for @signIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get signIn;
+
+  /// No description provided for @forgetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forget password?'**
+  String get forgetPassword;
+
+  /// No description provided for @forgetPasswordTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Forget password'**
+  String get forgetPasswordTitle;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @enterYourEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email'**
+  String get enterYourEmail;
+
   /// No description provided for @exploreOurWork.
   ///
   /// In en, this message translates to:
@@ -162,12 +216,6 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Already have an account? Sign in'**
   String get alreadyHaveAccount;
-
-  /// No description provided for @signUp.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign up'**
-  String get signUp;
 
   /// No description provided for @companyName.
   ///
@@ -211,24 +259,6 @@ abstract class S {
   /// **'Don’t have an account? Sign up'**
   String get dontHaveAccount;
 
-  /// No description provided for @signIn.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign in'**
-  String get signIn;
-
-  /// No description provided for @forgetPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Forget password'**
-  String get forgetPassword;
-
-  /// No description provided for @password.
-  ///
-  /// In en, this message translates to:
-  /// **'Password'**
-  String get password;
-
   /// No description provided for @confirmPassword.
   ///
   /// In en, this message translates to:
@@ -253,23 +283,11 @@ abstract class S {
   /// **'New Password'**
   String get newPassword;
 
-  /// No description provided for @email.
-  ///
-  /// In en, this message translates to:
-  /// **'Email'**
-  String get email;
-
   /// No description provided for @signInAccessOurServices.
   ///
   /// In en, this message translates to:
   /// **'Sign in to access our services'**
   String get signInAccessOurServices;
-
-  /// No description provided for @welcomeBack.
-  ///
-  /// In en, this message translates to:
-  /// **'Welcome Back'**
-  String get welcomeBack;
 
   /// No description provided for @welcome.
   ///
@@ -324,12 +342,6 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Services'**
   String get services;
-
-  /// No description provided for @home.
-  ///
-  /// In en, this message translates to:
-  /// **'Home'**
-  String get home;
 
   /// No description provided for @weSendVerificationCodeToYourEmail.
   ///

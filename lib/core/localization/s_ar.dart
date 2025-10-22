@@ -39,13 +39,37 @@ class SAr extends S {
       'تابع مسارك إلى التجار، أنشئ فواتيرك مباشرة من التطبيق، وأضف تجارًا جددًا بسهولة.\nعند العودة للمخزن، سلّم المتبقي وسجّل المرتجع بكل سلاسة.';
 
   @override
+  String get loginToYourAccount => 'تسجيل الدخول لحسابك';
+
+  @override
+  String get signUp => 'تسجيل';
+
+  @override
+  String get signIn => 'تسجيل الدخول';
+
+  @override
+  String get forgetPassword => 'نسيت كلمة المرور؟';
+
+  @override
+  String get forgetPasswordTitle => 'نسيت كلمة المرور';
+
+  @override
+  String get password => 'كلمة المرور';
+
+  @override
+  String get email => 'البريد الإلكتروني';
+
+  @override
+  String get home => 'الرئيسية';
+
+  @override
+  String get enterYourEmail => 'أدخل بريدك الإلكتروني';
+
+  @override
   String get exploreOurWork => 'اكتشف أعمالنا';
 
   @override
   String get alreadyHaveAccount => 'لدي حساب بالفعل؟ تسجيل دخول';
-
-  @override
-  String get signUp => 'تسجيل';
 
   @override
   String get companyName => 'اسم الشركة';
@@ -69,15 +93,6 @@ class SAr extends S {
   String get dontHaveAccount => 'ليس لديك حساب؟ انشاء حساب';
 
   @override
-  String get signIn => 'تسجيل الدخول';
-
-  @override
-  String get forgetPassword => 'نسيت كلمة المرور';
-
-  @override
-  String get password => 'كلمة المرور';
-
-  @override
   String get confirmPassword => 'تأكيد كلمة المرور';
 
   @override
@@ -90,13 +105,7 @@ class SAr extends S {
   String get newPassword => 'كلمة مرور جديدة';
 
   @override
-  String get email => 'البريد الإلكتروني';
-
-  @override
   String get signInAccessOurServices => 'قم بتسجيل الدخول للوصول الي خدماتنا';
-
-  @override
-  String get welcomeBack => 'مرحبًا بعودتك';
 
   @override
   String get welcome => 'مرحبًا';
@@ -125,9 +134,6 @@ class SAr extends S {
 
   @override
   String get services => 'الخدمات';
-
-  @override
-  String get home => 'الرئيسية';
 
   @override
   String get weSendVerificationCodeToYourEmail =>

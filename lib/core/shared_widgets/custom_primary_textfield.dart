@@ -77,11 +77,11 @@ class CustomPrimaryTextfield extends StatelessWidget {
             style:
                 style ??
                 AppTextStyles.style14W500.copyWith(
-                  color: AppColors.secondaryColor,
+                  color: AppColors.textGrayColor,
                 ),
           ),
           border: customOutlineInputBorder(),
-          focusedBorder: customOutlineInputBorder(),
+          focusedBorder: customFocusedOutlineInputBorder(),
           enabledBorder: customOutlineInputBorder(),
           disabledBorder: customOutlineInputBorder(),
           suffixIcon: suffix,
@@ -90,8 +90,8 @@ class CustomPrimaryTextfield extends StatelessWidget {
             horizontal: 12.w,
             vertical: 10.h,
           ),
-          filled: true,
-          fillColor: AppColors.scaffoldBackgroundLightColor,
+          // filled: true,
+          // fillColor: AppColors.scaffoldBackgroundLightColor,
         ),
 
         textInputAction: textInputAction,
@@ -106,9 +106,21 @@ OutlineInputBorder customOutlineInputBorder() {
     gapPadding: 0,
     borderRadius: BorderRadius.circular(kRadus),
     borderSide: const BorderSide(
-      width: 0.50,
+      width: 1,
       strokeAlign: BorderSide.strokeAlignOutside,
-      color: AppColors.secondaryColor,
+      color: AppColors.unfocusBorderColor,
+    ),
+  );
+}
+
+OutlineInputBorder customFocusedOutlineInputBorder() {
+  return OutlineInputBorder(
+    gapPadding: 0,
+    borderRadius: BorderRadius.circular(kRadus),
+    borderSide: const BorderSide(
+      width: 1,
+      strokeAlign: BorderSide.strokeAlignOutside,
+      color: AppColors.primaryColor,
     ),
   );
 }

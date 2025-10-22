@@ -11,4 +11,6 @@ class AppColors {
   static const grayColor = Color(0xff989898);
   static const Color appBarColor = Color(0xffDCF0F9);
   static const Color lightBlueColor = Color(0xffDCF0F9);
+  static const Color unfocusBorderColor = Color(0xffCCCCCC);
+  static const Color textGrayColor = Color(0xff89898A);
 }

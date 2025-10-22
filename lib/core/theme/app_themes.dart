@@ -20,7 +20,7 @@ class Appthemes {
       appBarTheme: AppBarTheme(
         iconTheme: const IconThemeData(color: AppColors.forthColor),
         toolbarHeight: 80.h,
-        backgroundColor: AppColors.appBarColor,
+        // backgroundColor: AppColors.appBarColor,
         surfaceTintColor: AppColors.scaffoldBackgroundLightColor,
       ),
       cardTheme: CardThemeData(

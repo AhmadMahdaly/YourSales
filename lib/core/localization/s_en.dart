@@ -39,13 +39,37 @@ class SEn extends S {
       'Follow your delivery route, visit merchants, create invoices, and add new clients easily.\nWhen you return to the warehouse, record remaining stock or returns seamlessly.';
 
   @override
+  String get loginToYourAccount => 'Login to your account';
+
+  @override
+  String get signUp => 'Sign up';
+
+  @override
+  String get signIn => 'Sign in';
+
+  @override
+  String get forgetPassword => 'Forget password?';
+
+  @override
+  String get forgetPasswordTitle => 'Forget password';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get enterYourEmail => 'Enter your email';
+
+  @override
   String get exploreOurWork => 'Explore Our Work';
 
   @override
   String get alreadyHaveAccount => 'Already have an account? Sign in';
-
-  @override
-  String get signUp => 'Sign up';
 
   @override
   String get companyName => 'Company Name';
@@ -69,15 +93,6 @@ class SEn extends S {
   String get dontHaveAccount => 'Don’t have an account? Sign up';
 
   @override
-  String get signIn => 'Sign in';
-
-  @override
-  String get forgetPassword => 'Forget password';
-
-  @override
-  String get password => 'Password';
-
-  @override
   String get confirmPassword => 'Confirm password';
 
   @override
@@ -90,13 +105,7 @@ class SEn extends S {
   String get newPassword => 'New Password';
 
   @override
-  String get email => 'Email';
-
-  @override
   String get signInAccessOurServices => 'Sign in to access our services';
-
-  @override
-  String get welcomeBack => 'Welcome Back';
 
   @override
   String get welcome => 'Welcome';
@@ -125,9 +134,6 @@ class SEn extends S {
 
   @override
   String get services => 'Services';
-
-  @override
-  String get home => 'Home';
 
   @override
   String get weSendVerificationCodeToYourEmail =>

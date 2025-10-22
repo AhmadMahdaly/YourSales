@@ -31,7 +31,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          s.forgetPassword,
+          s.forgetPasswordTitle,
           style: AppTextStyles.style20Bold.copyWith(fontSize: 20.sp),
         ),
         leading: IconButton(
@@ -47,10 +47,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
-                s.email,
-                style: AppTextStyles.style14W600,
-              ),
+              Text(s.enterYourEmail, style: AppTextStyles.style14W600),
               6.verticalSpace,
               CustomPrimaryTextfield(
                 controller: _emailController,
