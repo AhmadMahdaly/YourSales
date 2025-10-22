@@ -7,6 +7,6 @@ class TabItemModel {
     required this.page,
   });
   final String label;
-  final IconData icon;
+  final String icon;
   final Widget page;
 }

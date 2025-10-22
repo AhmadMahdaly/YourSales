@@ -20,7 +20,15 @@ class CustomPrimaryButton extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: ButtonStyle(
-          backgroundColor: WidgetStateProperty.all(AppColors.primaryColor),
+          backgroundBuilder: (context, states, child) {
+            return Ink(
+              decoration: BoxDecoration(
+                gradient: appGradient,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: child,
+            );
+          },
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           minimumSize: WidgetStateProperty.all(
             Size(width ?? double.infinity, 52.h),

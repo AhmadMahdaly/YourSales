@@ -66,6 +66,15 @@ class SEn extends S {
   String get enterYourEmail => 'Enter your email';
 
   @override
+  String get orders => 'Orders';
+
+  @override
+  String get wallet => 'Wallet';
+
+  @override
+  String get account => 'Account';
+
+  @override
   String get exploreOurWork => 'Explore Our Work';
 
   @override

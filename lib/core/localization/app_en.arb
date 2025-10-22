@@ -16,7 +16,9 @@
     "password":"Password",
     "email":"Email",
     "home":"Home",
-      "enterYourEmail": "Enter your email",
+      "enterYourEmail": "Enter your email",  "orders": "Orders",
+  "wallet": "Wallet",
+  "account": "Account",
 
 
 

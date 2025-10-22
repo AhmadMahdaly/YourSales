@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:your_sales/core/cache_helper/cache_helper.dart';
 import 'package:your_sales/core/localization/s.dart';
-import 'package:your_sales/core/responsive/responsive_config.dart';
+import 'package:your_sales/core/shared_widgets/svg_image_widget.dart';
 import 'package:your_sales/core/theme/app_colors.dart';
 import 'package:your_sales/features/main_layout/data/models/tab_item_model.dart';
 import 'package:your_sales/features/main_layout/presentation/controllers/cubit/main_layout_cubit.dart';
@@ -35,24 +33,29 @@ class _MainLayoutViewState extends State<MainLayoutView> {
   Widget build(BuildContext context) {
     return BlocBuilder<LocalizationCubit, LocalizationState>(
       builder: (context, state) {
-        final localizationCubit = context.read<LocalizationCubit>();
+        // final localizationCubit = context.read<LocalizationCubit>();
         Future.microtask(() {
           final s = S.of(context)!;
           context.read<MainLayoutCubit>().setTabs([
             TabItemModel(
               label: s.home,
-              icon: IconlyBroken.home,
+              icon: 'assets/images/svg/home.svg',
               page:
                   const SizedBox(), //HomeView(onPageChanged: context.read<MainLayoutCubit>().onPageChanged, pageController: _pageController,),
             ),
             TabItemModel(
-              label: s.services,
-              icon: IconlyBroken.category,
+              label: s.orders,
+              icon: 'assets/images/svg/orders.svg',
               page: const SizedBox(),
             ),
             TabItemModel(
-              label: s.support,
-              icon: IconlyBroken.work,
+              label: s.wallet,
+              icon: 'assets/images/svg/wallet.svg',
+              page: const SizedBox(),
+            ),
+            TabItemModel(
+              label: s.profile,
+              icon: 'assets/images/svg/user.svg',
               page: const SizedBox(),
             ),
           ]);
@@ -68,97 +71,50 @@ class _MainLayoutViewState extends State<MainLayoutView> {
             }
 
             return Scaffold(
-              appBar: AppBar(
-                shape: OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: AppColors.primaryColor,
-                    width: 0.7,
-                  ),
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(15.r),
-                    bottomRight: Radius.circular(15.r),
-                  ),
-                ),
-                centerTitle: true,
-                // title: Padding(
-                //   padding: EdgeInsets.symmetric(horizontal: 16.w),
-                //   child: Image.asset(
-                //     AppImages.appLogoWhithoutBg,
-                //     width: 50.w,
-                //     fit: BoxFit.fitWidth,
-                //   ),
-                // ),
-                actions: [
-                  IconButton(
-                    onPressed: () async {
-                      final newLang = CacheHelper.getLanguage() == 'ar'
-                          ? 'en'
-                          : 'ar';
-                      await localizationCubit.changeLanguage(
-                        Locale(newLang),
-                      );
-                      // context.read<ServiceBloc>().add(
-                      //   const FetchServicesEvent(),
-                      // );
-                    },
-                    icon: const Icon(
-                      Icons.language_outlined,
-                      color: AppColors.primaryColor,
-                    ),
-                  ),
-                ],
-              ),
+              // IconButton(
+              //   onPressed: () async {
+              //     final newLang = CacheHelper.getLanguage() == 'ar'
+              //         ? 'en'
+              //         : 'ar';
+              //     await localizationCubit.changeLanguage(
+              //       Locale(newLang),
+              //     );
+              // context.read<ServiceBloc>().add(
+              //   const FetchServicesEvent(),
+              // );
+              //   },
+              //   icon: const Icon(
+              //     Icons.language_outlined,
+              //     color: AppColors.primaryColor,
+              //   ),
+              // ),
               body: PageView(
                 controller: _pageController,
                 onPageChanged: cubit.onPageChanged,
                 children: state.tabs.map((t) => t.page).toList(),
               ),
-              bottomNavigationBar: Container(
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: AppColors.primaryColor,
-                    width: 0.8,
-                    strokeAlign: BorderSide.strokeAlignOutside,
-                  ),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15.r),
-                    topRight: Radius.circular(15.r),
-                  ),
-                ),
-                child: BottomNavigationBar(
-                  currentIndex: state.currentIndex,
-                  onTap: (index) => cubit.goToPage(index, _pageController),
-                  selectedItemColor: AppColors.primaryColor,
-                  unselectedItemColor: DefaultSelectionStyle.defaultColor,
-                  type: BottomNavigationBarType.fixed,
-                  items: state.tabs.map((tab) {
-                    final isActive =
-                        state.tabs.indexOf(tab) == state.currentIndex;
-                    return BottomNavigationBarItem(
-                      icon: isActive
-                          ? Container(
-                              padding: EdgeInsets.all(8.r),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(320.r),
-                                border: Border.all(
-                                  color: AppColors.primaryColor,
-                                  width: 1,
-                                ),
-                              ),
-                              child: Icon(
-                                tab.icon,
-                                color: AppColors.primaryColor,
-                              ),
-                            )
-                          : Icon(
-                              tab.icon,
-                              color: DefaultSelectionStyle.defaultColor,
-                            ),
-                      label: tab.label,
-                    );
-                  }).toList(),
-                ),
+              bottomNavigationBar: BottomNavigationBar(
+                currentIndex: state.currentIndex,
+                onTap: (index) => cubit.goToPage(index, _pageController),
+                selectedItemColor: AppColors.primaryColor,
+                unselectedItemColor: DefaultSelectionStyle.defaultColor,
+                type: BottomNavigationBarType.fixed,
+                items: state.tabs.map((tab) {
+                  final isActive =
+                      state.tabs.indexOf(tab) == state.currentIndex;
+                  return BottomNavigationBarItem(
+                    icon: isActive
+                        ? SvgImage(
+                            imagePath: tab.icon,
+                            color: AppColors.primaryColor,
+                          )
+                        : SvgImage(
+                            imagePath: tab.icon,
+                            color: DefaultSelectionStyle.defaultColor,
+                          ),
+                    label: tab.label,
+                  );
+                }).toList(),
               ),
             );
           },

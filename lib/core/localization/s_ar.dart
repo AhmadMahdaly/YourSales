@@ -66,6 +66,15 @@ class SAr extends S {
   String get enterYourEmail => 'أدخل بريدك الإلكتروني';
 
   @override
+  String get orders => 'الطلبات';
+
+  @override
+  String get wallet => 'المحفظة';
+
+  @override
+  String get account => 'الحساب';
+
+  @override
   String get exploreOurWork => 'اكتشف أعمالنا';
 
   @override
