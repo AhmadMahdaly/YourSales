@@ -124,6 +124,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      if (onboardingCubit.onBoardingIndex != 2)
+                        const SkipButton(),
                       Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: 8.w,
@@ -158,8 +160,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           ),
                         ),
                       ),
-                      if (onboardingCubit.onBoardingIndex != 2)
-                        const SkipButton(),
                     ],
                   ),
                 ),

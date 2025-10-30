@@ -5,6 +5,7 @@ int mainLayoutIntitalScreenIndex = 0;
 String? userToken;
 final navigatorKey = GlobalKey<NavigatorState>();
 const kPrimaryFont = 'IBMPlexSansArabic';
+const kSecondryFont = 'Almarai';
 final double kRadus = 8.r;
 const LinearGradient appGradient = LinearGradient(
   begin: Alignment.topLeft,

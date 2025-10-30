@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:your_sales/core/localization/s.dart';
 import 'package:your_sales/core/responsive/responsive_config.dart';
 import 'package:your_sales/core/routing/router_generation_config.dart';
+import 'package:your_sales/core/shared_controllers/cubit/location_permission_cubit.dart';
 import 'package:your_sales/core/theme/app_themes.dart';
 import 'package:your_sales/features/my_app/controller/cubit/localization_cubit.dart';
 
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<LocalizationCubit>(
           create: (context) => LocalizationCubit(),
+        ),
+        BlocProvider(
+          create: (context) => LocationPermissionCubit(),
         ),
       ],
       child: BlocBuilder<LocalizationCubit, LocalizationState>(
